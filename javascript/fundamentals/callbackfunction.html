@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callback function</title>
+    <script>
+        function ask(question,yes,no){
+            if(confirm(question))
+                yes();
+                else
+                    no();
+            }
+        
+
+        function showok(){
+            alert("you agreed!")
+        };
+        function showCancel(){
+            alert("you cancelled it!")
+        };
+        ask("Do you agree?",showok,showCancel);
+
+        //function expression
+        ask("Do you have permission?" ,
+           function(){alert("permission granted");},//anonymous function
+           function(){alert("permission Denied!")});//anonymous function
+
+      //outside we cant use anonymous function this will give error
+      //     function(){
+      //  alert("hello");
+      //    }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
